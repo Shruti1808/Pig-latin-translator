@@ -1,23 +1,32 @@
-var vowels = ["a", "e", "i", "o", "u"];
-var test ="hi";
-alert ("hi")
+
+
+function translator(wordInput){
+  alert("test")
+  var vowels = ["a", "e", "i", "o", "u"];
+  var wordArray = wordInput.split("");
+      if(wordArray[0]=== "a"||wordArray[0]=== "e"||wordArray[0]=== "i"||wordArray[0]=== "o"||wordArray[0]=== "u"){
+        result = wordInput.concat("ay");
+      }
+ return result;
+}
+
 
 $(document).ready(function() {
-  $("form#leap-year").submit(function(event){
-    var wordInput = ("#input").val();
-    var wordArray = wordInput.split("");
-    var pigLatin = "ay";
+  $("form#translator").submit(function(event){
+    event.preventDefault();
 
-    for (index = 0; index <= wordArray.length; index += 1){
-      if(wordArray[index]=== "a"||wordArray[index]=== "e"||wordArray[index]=== "i"||wordArray[index]=== "o"||wordArray[index]=== "u"||wordArray[index]=== "A"||wordArray[index]=== "E"||wordArray[index]=== "I"||wordArray[index]=== "O"||wordArray[index]=== "U"
+    var wordInput = $("#input").val();
+    console.log(wordInput);
+     var output = translator(wordInput);
+     $("#output").text(output);
 
-      $(wordArray).push(piglatin);
+
       // $(wordArray).toString();
 
-  )}
+    });
 
 
 
-   $("#output").text(output);
-});
-});
+
+})
+// };
