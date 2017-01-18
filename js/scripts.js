@@ -1,14 +1,19 @@
 
 
 function translator(wordInput){
-  alert("test")
   var vowels = ["a", "e", "i", "o", "u"];
   var wordArray = wordInput.split("");
       if(wordArray[0]=== "a"||wordArray[0]=== "e"||wordArray[0]=== "i"||wordArray[0]=== "o"||wordArray[0]=== "u"){
         result = wordInput.concat("ay");
+        return result;
+      }else {
+        var consonant= wordArray.shift();
+        return wordArray.join("") + consonant + "ay";
       }
- return result;
-}
+
+
+
+      }
 
 
 $(document).ready(function() {
